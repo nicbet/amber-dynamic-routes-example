@@ -1,0 +1,4 @@
+<%- active = context.request.path == "/" ? "active" : "" %>
+<a class="nav-item <%= active %>" href="/">Home</a>
+<%- active = context.request.path == "/routes" ? "active" : "" %>
+<a class="nav-item <%= active %>" href="/routes">Routes</a>

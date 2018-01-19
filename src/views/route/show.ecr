@@ -1,0 +1,9 @@
+<h1>Show Route</h1>
+
+<p><%= route.path %></p>
+<p><%= route.response %></p>
+<p>
+  <%= link_to("back", "/routes", class: "btn btn-success btn-xs") -%>
+  <%= link_to("edit", "/routes/#{route.id}/edit", class: "btn btn-success btn-xs") -%>
+  <%= link_to("delete", "/routes/#{route.id}?_method=delete&_csrf=#{csrf_token}", class: "btn btn-danger btn-xs", onclick: "return confirm('Are you sure?');") -%>
+</p>

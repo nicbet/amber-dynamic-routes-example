@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-sm-11">
+    <h2>Routes</h2>
+  </div>
+  <div class="col-sm-1">
+    <a class="btn btn-success btn-xs" href="/routes/new">New</a>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Path</th>
+        <th>Response</th>
+        <th>Actions</th>
+      </tr>
+    <tbody>
+    <%- routes.each do |route| %>
+      <tr>
+        <td><%= route.path %></td>
+        <td><%= route.response %></td>
+        <td>
+          <span>
+            <%= link_to("read", "/routes/#{route.id}", class: "btn btn-success btn-xs") -%>
+            <%= link_to("edit", "/routes/#{route.id}/edit", class: "btn btn-success btn-xs") -%>
+            <%= link_to("delete", "/routes/#{route.id}?_method=delete&_csrf=#{csrf_token}", class: "btn btn-danger btn-xs", onclick: "return confirm('Are you sure?');") -%>
+          </span>
+        </td>
+      </tr>
+    <%- end %>
+    </tbody>
+  </table>
+</div>
